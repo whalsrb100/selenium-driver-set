@@ -5,9 +5,10 @@ import requests, os, time
 import subprocess
 from bs4 import BeautifulSoup as Soup
 
-def get_Driver(BrowserName):
+def getWebDriver(BrowserName):
+    '''Support Browser List: "Chrome" "Firefox" "Internet-Explorer" "Edge" "Brave" '''
     BowserList = [
-        "Google-Chrome",
+        "Chrome",
         "Firefox",
         "Internet-Explorer",
         "Edge",
@@ -45,4 +46,16 @@ def get_Driver(BrowserName):
         from webdriver_manager.core.os_manager import ChromeType
         driver = webdriver.Chrome(service=BraveService(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install()))
     return driver
+```
+fileName: getWebDriver.py
+
+
+# Useage
+
+```python
+from getWebDriver import getWebDriver
+
+driver = getWebDriver("Chrome")
+
+...
 ```
